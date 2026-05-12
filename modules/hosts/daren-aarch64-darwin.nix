@@ -32,6 +32,7 @@ in
       direnv
       ssh
       cli
+      node
       python
     ];
   };
