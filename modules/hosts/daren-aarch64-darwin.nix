@@ -27,6 +27,7 @@ in
       atuin
       zoxide
       ssh
+      cli
     ];
   };
 }

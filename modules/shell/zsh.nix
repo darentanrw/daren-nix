@@ -30,6 +30,15 @@
             }
           ];
 
+          shellAliases = {
+            ls = "eza --icons=always";
+            ll = "eza --icons=always -l";
+            la = "eza --icons=always -la";
+            tree = "eza --icons=always --tree";
+            grep = "rg --color=auto";
+            find = "fd --color=auto";
+          };
+
           initContent = ''
             export GPG_TTY="$(tty)"
 
