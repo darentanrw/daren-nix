@@ -23,6 +23,7 @@ in
       determinateNixConfig
       daren
       git
+      zsh
     ];
   };
 }
