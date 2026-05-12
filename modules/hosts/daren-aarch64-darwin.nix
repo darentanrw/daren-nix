@@ -23,9 +23,11 @@ in
       determinateNixConfig
       daren
       git
+      gh
       zsh
       atuin
       zoxide
+      direnv
       ssh
       cli
     ];
