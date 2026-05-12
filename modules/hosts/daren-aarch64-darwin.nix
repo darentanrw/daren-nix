@@ -1,4 +1,4 @@
-# daren-aarch64-darwin.nix is the configuration for the daren-aarch64-darwin host, 
+# daren-aarch64-darwin.nix is the configuration for the daren-aarch64-darwin host,
 # choosing which features are active on that mac
 
 { inputs, ... }:
@@ -22,6 +22,7 @@ in
       base
       determinateNixConfig
       daren
+      git
     ];
   };
 }
