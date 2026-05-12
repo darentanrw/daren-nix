@@ -1,15 +1,21 @@
 {
   description = "daren's nix conflict based off nix-darwin and Determinate Nix";
 
-  # Flake inputs
   inputs = {
     nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0";
+
     nix-darwin = {
       url = "https://flakehub.com/f/nix-darwin/nix-darwin/0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     determinate = {
       url = "https://flakehub.com/f/DeterminateSystems/determinate/3";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    home-manager = {
+      url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -27,10 +33,13 @@
         modules = [
           # Add the determinate nix-darwin module
           inputs.determinate.darwinModules.default
+
           # Apply the modules output by this flake
           self.darwinModules.base
           self.darwinModules.determinateNixConfig
+
           # Apply any other imported modules here
+          inputs.home-manager.darwinModules.home-manager
 
           # In addition to adding modules in the style above, you can also
           # add modules inline like this. Delete this if unnecessary.
@@ -64,12 +73,18 @@
 
             users.users.${username} = {
               name = username;
-              # See the reference docs for more on user config:
-              # https://nix-darwin.github.io/nix-darwin/manual/#opt-users.users
+              home = "/Users/${username}";
             };
 
-            # Other configuration parameters
-            # See here: https://nix-darwin.github.io/nix-darwin/manual
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+
+            home-manager.users.${username} = {
+              home.username = username;
+              home.homeDirectory = "/Users/${username}";
+              home.stateVersion = "25.11";
+            };
+
           };
 
         # Determinate Nix configuration
