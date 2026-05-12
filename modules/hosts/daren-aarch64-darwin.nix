@@ -24,6 +24,8 @@ in
       daren
       git
       zsh
+      atuin
+      zoxide
     ];
   };
 }
