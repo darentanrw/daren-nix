@@ -26,6 +26,7 @@ in
       zsh
       atuin
       zoxide
+      ssh
     ];
   };
 }
