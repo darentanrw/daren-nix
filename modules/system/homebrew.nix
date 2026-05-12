@@ -28,6 +28,7 @@
           "iterm2"
           "ngrok"
           "warp"
+          "jordanbaird-ice"
         ];
       };
     };
