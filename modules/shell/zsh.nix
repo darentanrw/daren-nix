@@ -40,6 +40,9 @@
           };
 
           initContent = ''
+            unset NO_COLOR
+            export CLICOLOR=1
+            export COLORTERM=truecolor
             export GPG_TTY="$(tty)"
 
             [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

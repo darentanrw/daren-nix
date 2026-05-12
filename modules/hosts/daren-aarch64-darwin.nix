@@ -18,9 +18,11 @@ in
     modules = with inputs.self.modules.darwin; [
       inputs.determinate.darwinModules.default
       inputs.home-manager.darwinModules.home-manager
+      inputs.nix-homebrew.darwinModules.nix-homebrew
 
       base
       determinateNixConfig
+      homebrew
       daren
       git
       gh
