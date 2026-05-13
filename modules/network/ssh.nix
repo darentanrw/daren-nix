@@ -21,33 +21,16 @@
             userKnownHostsFile = "~/.ssh/known_hosts";
           };
 
-          "2030" = {
-            hostname = "pe112.comp.nus.edu.sg";
-            user = "darentan";
-          };
-
           "daren-fast" = {
             hostname = "103.149.46.28";
             user = "daren";
             identityFile = "~/.ssh/daren-fast";
           };
 
-          "daren-docker" = {
-            hostname = "152.42.224.26";
+          "do-immich" = {
+            hostname = "167.172.84.73";
             user = "daren";
-            identityFile = "~/.ssh/id_ed25519";
-          };
-
-          "daren-do-2" = {
-            hostname = "159.65.13.35";
-            user = "daren";
-            identityFile = "~/.ssh/DO-workshop";
-          };
-
-          "daren-do-3" = {
-            hostname = "178.128.96.55";
-            user = "daren";
-            identityFile = "~/.ssh/do-3";
+            identityFile = "~/.ssh/do-immich";
           };
         };
       };
