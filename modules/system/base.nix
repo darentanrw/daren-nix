@@ -4,7 +4,8 @@
   flake.modules.darwin.base =
     { username, ... }:
     {
-      time.timeZone = "Asia/Singapore";
+      time.timeZone = "America/Los_Angeles";
+ 
 
       system.stateVersion = 1;
 

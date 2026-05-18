@@ -27,6 +27,7 @@ in
       workHomebrew
       workDock
       daren
+      git
       gh
       zsh
       atuin
