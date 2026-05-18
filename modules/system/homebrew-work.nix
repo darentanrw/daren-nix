@@ -8,6 +8,7 @@
       "linear"
       "notion"
       "slack"
+      "vscode"
       "codex"
       "ghostty"
       "jordanbaird-ice"
