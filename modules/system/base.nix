@@ -35,6 +35,45 @@
           tilesize = 52;
           magnification = true;
           largesize = 80;
+          persistent-apps = [
+            { app = "/System/Applications/Apps.app"; }
+            { app = "/System/Applications/Notes.app"; }
+            { app = "/Applications/Microsoft Excel.app"; }
+            { app = "/Applications/Microsoft PowerPoint.app"; }
+            { app = "/Applications/Microsoft Word.app"; }
+            {
+              spacer = {
+                small = true;
+              };
+            }
+            { app = "/Applications/DaVinci Resolve/DaVinci Resolve.app"; }
+            { app = "/Applications/Adobe Lightroom Classic/Adobe Lightroom Classic.app"; }
+            { app = "/Applications/Adobe Photoshop 2024/Adobe Photoshop 2024.app"; }
+            { app = "/Applications/Adobe Premiere Pro 2024/Adobe Premiere Pro 2024.app"; }
+            {
+              spacer = {
+                small = true;
+              };
+            }
+            { app = "/Applications/Google Chrome.app"; }
+            { app = "/Applications/Zen.app"; }
+            { app = "/Applications/Ghostty.app"; }
+            { app = "/Applications/GitKraken.app"; }
+            { app = "/Applications/Cursor.app"; }
+            { app = "/Applications/Codex.app"; }
+            { app = "/Applications/Linear.app"; }
+            { app = "/Applications/Notion.app"; }
+            { app = "/Applications/Notion Calendar.app"; }
+            {
+              spacer = {
+                small = true;
+              };
+            }
+            { app = "/Applications/Spotify.app"; }
+            { app = "/Applications/Discord.app"; }
+            { app = "/Applications/Telegram.app"; }
+            { app = "/Applications/WhatsApp.app"; }
+          ];
         };
 
         finder = {

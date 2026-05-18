@@ -29,6 +29,7 @@
           "ngrok"
           "warp"
           "jordanbaird-ice"
+          "tailscale"
         ];
       };
     };

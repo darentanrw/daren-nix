@@ -12,10 +12,14 @@ in
     inherit system;
 
     specialArgs = {
-      inherit inputs username;
+      inherit username;
     };
 
     modules = with inputs.self.modules.darwin; [
+      {
+        nixpkgs.hostPlatform = system;
+      }
+
       inputs.determinate.darwinModules.default
       inputs.home-manager.darwinModules.home-manager
       inputs.nix-homebrew.darwinModules.nix-homebrew

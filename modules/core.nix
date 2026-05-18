@@ -7,6 +7,12 @@
     description = "Dendritic modules grouped by target class.";
   };
 
+  options.flake.darwinConfigurations = lib.mkOption {
+    type = lib.types.lazyAttrsOf lib.types.raw;
+    default = { };
+    description = "nix-darwin host configurations.";
+  };
+
   config = {
     systems = [ "aarch64-darwin" ];
 
@@ -22,7 +28,7 @@
               ];
               text = ''
                 echo "> Applying nix-darwin configuration..."
-                sudo darwin-rebuild switch --flake ".#daren-aarch64-darwin"
+                sudo darwin-rebuild switch --flake ".#''${1:-daren-aarch64-darwin}"
                 echo "> macOS config was successfully applied"
               '';
             })
