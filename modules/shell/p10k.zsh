@@ -32,6 +32,7 @@
   # The list of segments shown on the left. Fill it with the most important segments.
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
     # =========================[ Line #1 ]=========================
+    readily_env             # Readily dev stack: color + Postgres port (custom)
     os_icon                 # os identifier
     dir                     # current directory
     vcs                     # git status
@@ -1694,6 +1695,46 @@
     # and regular prompts.
     prompt_example
   }
+
+  # Readily dev-stack indicator. Shows which colored environment (and its Postgres
+  # host port) the current directory's checkout targets, so a destructive command
+  # never lands on the wrong DB. Renders only inside a Readily checkout — one with
+  # a .devcontainer/.env containing READILY_COLOR. Self-contained: reads that file
+  # on each prompt (it's tiny), which also makes it correct in instant prompt.
+  function prompt_readily_env() {
+    local dir=$PWD envf=
+    while true; do
+      if [[ -r $dir/.devcontainer/.env ]]; then envf=$dir/.devcontainer/.env; break; fi
+      [[ $dir == / ]] && break
+      dir=${dir:h}
+    done
+    [[ -n $envf ]] || return
+
+    local color= port= line
+    while IFS= read -r line; do
+      case $line in
+        READILY_COLOR=*) color=${line#READILY_COLOR=} ;;
+        POSTGRES_PORT=*) port=${line#POSTGRES_PORT=} ;;
+      esac
+    done < $envf
+    [[ -n $color ]] || return
+
+    local bg
+    case $color in
+      blue)          bg=39  ;;
+      green)         bg=46  ;;
+      orange)        bg=208 ;;
+      red)           bg=196 ;;
+      purple|violet) bg=141 ;;
+      yellow)        bg=226 ;;
+      *)             bg=244 ;;
+    esac
+
+    local label=${(U)color}
+    [[ -n $port ]] && label="$label :$port"
+    p10k segment -b $bg -f 16 -i $'' -t "$label"
+  }
+  function instant_prompt_readily_env() { prompt_readily_env }
 
   # User-defined prompt segments can be customized the same way as built-in segments.
   # typeset -g POWERLEVEL9K_EXAMPLE_FOREGROUND=208
