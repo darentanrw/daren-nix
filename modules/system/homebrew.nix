@@ -26,10 +26,9 @@
           "codex"
           "ghostty"
           "iterm2"
-          "ngrok"
           "warp"
           "jordanbaird-ice"
-          "tailscale"
+          "tailscale-app"
         ];
       };
     };

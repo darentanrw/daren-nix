@@ -5,14 +5,21 @@
     homebrew.casks = [
       "cursor"
       "google-chrome"
+      "google-chrome@canary"
+      "linearmouse"
+      "raycast"
       "linear"
       "notion"
       "slack"
-      "vscode"
+      "visual-studio-code"
+      "t3-code"
       "codex"
+      "codex-app"
       "ghostty"
       "jordanbaird-ice"
-      "claude-code"
+      "dbeaver-community"
+      "cmux"
+      "claude-code@latest"
     ];
   };
 }
