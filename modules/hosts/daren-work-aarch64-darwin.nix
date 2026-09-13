@@ -33,6 +33,7 @@ in
       atuin
       zoxide
       direnv
+      ssh
       cli
       node
       python
