@@ -29,6 +29,9 @@
           "warp"
           "jordanbaird-ice"
           "tailscale-app"
+          "cmux"
+          "linearmouse"
+          "claude-code@latest"
         ];
       };
     };

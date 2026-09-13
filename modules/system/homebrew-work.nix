@@ -19,6 +19,7 @@
       "jordanbaird-ice"
       "dbeaver-community"
       "cmux"
+      "chatgpt"
       "claude-code@latest"
     ];
   };
