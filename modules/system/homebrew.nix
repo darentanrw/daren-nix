@@ -32,6 +32,7 @@
           "cmux"
           "linearmouse"
           "claude-code@latest"
+          "chatgpt"
         ];
       };
     };
