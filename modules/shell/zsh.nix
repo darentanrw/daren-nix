@@ -37,6 +37,7 @@
             tree = "eza --icons=always --tree";
             grep = "rg --color=auto";
             find = "fd --color=auto";
+            c = "claude";
           };
 
           initContent = ''
@@ -83,6 +84,26 @@
             add-zsh-hook precmd _readily_title_precmd
 
             [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+            # --- CLIProxyAPI (brew service on :8317, config /opt/homebrew/etc/cliproxyapi.conf) ---
+            # claudex = Claude Code routed through the local proxy (Claude + Codex OAuth accounts).
+            # Pick a model with `claudex --model <id>`; list ids with `cpa-models`.
+            claudex() {
+              local key
+              key=$(<~/.cli-proxy-api/api-key) || { print -u2 "claudex: missing ~/.cli-proxy-api/api-key"; return 1; }
+              ANTHROPIC_BASE_URL=http://127.0.0.1:8317 \
+              ANTHROPIC_AUTH_TOKEN=$key \
+              CLAUDE_CODE_ENABLE_GATEWAY_MODEL_DISCOVERY=1 \
+              API_TIMEOUT_MS=600000 \
+              command claude "$@"
+            }
+            cpa-models() {
+              curl -s -H "Authorization: Bearer $(<~/.cli-proxy-api/api-key)" http://127.0.0.1:8317/v1/models | jq -r '.data[].id'
+            }
+            # cpa-login claude | codex  (re-auth a provider; opens the browser)
+            cpa-login() {
+              /opt/homebrew/opt/cliproxyapi/bin/cliproxyapi -config /opt/homebrew/etc/cliproxyapi.conf "-$1-login"
+            }
           '';
         };
       };

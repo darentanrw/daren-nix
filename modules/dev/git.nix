@@ -5,8 +5,8 @@
     { pkgs, ... }:
     {
       home-manager.users.daren = {
+        # gh comes from programs.gh (gh.nix); listing it here too collides on bin/gh
         home.packages = with pkgs; [
-          gh
           gnupg
         ];
 

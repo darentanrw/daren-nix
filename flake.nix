@@ -3,6 +3,8 @@
 
   inputs = {
     nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.2511";
+    # for packages stable lags on (gh --attach needs >= 2.99; 25.11 stops at 2.93)
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
     nix-darwin = {
       url = "https://flakehub.com/f/nix-darwin/nix-darwin/0";
