@@ -61,7 +61,7 @@
             { app = "/Applications/Ghostty.app"; }
             { app = "/Applications/GitKraken.app"; }
             { app = "/Applications/Cursor.app"; }
-            { app = "/Applications/Codex.app"; }
+            { app = "/Applications/ChatGPT.app"; }
             { app = "/Applications/Linear.app"; }
             { app = "/Applications/Notion.app"; }
             { app = "/Applications/Notion Calendar.app"; }

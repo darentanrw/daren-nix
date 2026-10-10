@@ -25,13 +25,15 @@
           "codex"
           "ghostty"
           "iterm2"
-          "warp"
           "jordanbaird-ice"
           "tailscale-app"
           "cmux"
           "linearmouse"
           "claude-code@latest"
           "chatgpt"
+          "cursor"
+          "google-chrome"
+          "raycast"
         ];
       };
     };

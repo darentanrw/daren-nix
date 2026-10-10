@@ -19,7 +19,7 @@
           { app = "/Applications/Cursor.app"; }
           { app = "/Applications/Visual Studio Code.app"; }
           { app = "/Applications/Claude.app"; }
-          { app = "/Applications/Codex.app"; }
+          { app = "/Applications/ChatGPT.app"; }
           { app = "/Applications/Linear.app"; }
           { app = "/Applications/Slack.app"; }
           { app = "/Applications/Docker.app/Contents/MacOS/Docker Desktop.app"; }
