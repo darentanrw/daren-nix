@@ -24,6 +24,7 @@
         "aws-vpn-client"
         "claude"
         "docker-desktop"
+        "sublime-text"
       ];
     };
 }
