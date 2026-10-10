@@ -23,7 +23,7 @@ nix develop -c apply-nix-darwin-configuration daren-work-aarch64-darwin
 | ----------------------------- | ------------------------------------------------ |
 | `daren-aarch64-darwin`        | Personal (the default when no host is passed)    |
 | `daren-work-aarch64-darwin`   | Work: adds work Homebrew packages and Dock setup |
-| `readily-work-aarch64-darwin` | Same work config, for a Mac whose user is `readily` |
+| `readily-work-aarch64-darwin` | Work config for the `readily` user, plus Office, AWS VPN, Claude and Docker; no Telegram or Spotify in the Dock |
 
 Hosts are tied to the macOS account name (`whoami`). To add a work Mac with a different user, add the name to `usernames` in `modules/hosts/daren-work-aarch64-darwin.nix`.
 
