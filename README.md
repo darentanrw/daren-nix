@@ -2,6 +2,40 @@
 
 Small personal Nix configuration for macOS, built around `nix-darwin`, Home Manager, and flake-parts.
 
+## Quickstart (new Mac)
+
+```sh
+# 1. Command Line Tools (provides git)
+xcode-select --install
+
+# 2. Determinate Nix, then open a new terminal so `nix` is on PATH
+curl -fsSL https://install.determinate.systems/nix | sh -s -- install
+
+# 3. Clone this repo
+git clone https://github.com/darentanrw/daren-nix.git ~/daren-nix
+cd ~/daren-nix
+
+# 4. First apply (pick a host below; prompts for sudo)
+nix develop -c apply-nix-darwin-configuration daren-work-aarch64-darwin
+```
+
+| Host                        | Machine                                          |
+| --------------------------- | ------------------------------------------------ |
+| `daren-aarch64-darwin`      | Personal (the default when no host is passed)    |
+| `daren-work-aarch64-darwin` | Work: adds work Homebrew packages and Dock setup |
+
+Open a new terminal after the first apply to pick up the managed shell. After that:
+
+- Run `direnv allow` once in `~/daren-nix`. From then on `apply-nix-darwin-configuration <host>` is on PATH inside the repo, so `nix develop` isn't needed.
+- Run `gh auth login` to sign in to GitHub.
+
+If activation stops with `Unexpected files in /etc`, move the listed files aside and apply again:
+
+```sh
+sudo mv /etc/zshrc /etc/zshrc.before-nix-darwin
+sudo mv /etc/bashrc /etc/bashrc.before-nix-darwin
+```
+
 ## File Structure
 
 ```text
