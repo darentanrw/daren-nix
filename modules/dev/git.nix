@@ -2,9 +2,9 @@
 
 {
   flake.modules.darwin.git =
-    { pkgs, ... }:
+    { pkgs, username, ... }:
     {
-      home-manager.users.daren = {
+      home-manager.users.${username} = {
         # gh comes from programs.gh (gh.nix); listing it here too collides on bin/gh
         home.packages = with pkgs; [
           gnupg

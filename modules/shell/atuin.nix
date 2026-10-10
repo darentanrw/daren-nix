@@ -1,22 +1,24 @@
 { ... }:
 
 {
-  flake.modules.darwin.atuin = {
-    home-manager.users.daren = {
-      programs.atuin = {
-        enable = true;
-        enableZshIntegration = true;
+  flake.modules.darwin.atuin =
+    { username, ... }:
+    {
+      home-manager.users.${username} = {
+        programs.atuin = {
+          enable = true;
+          enableZshIntegration = true;
 
-        settings = {
-          enter_accept = true;
-          inline_height = 40;
-          show_preview = true;
+          settings = {
+            enter_accept = true;
+            inline_height = 40;
+            show_preview = true;
 
-          theme = {
-            name = "default";
+            theme = {
+              name = "default";
+            };
           };
         };
       };
     };
-  };
 }

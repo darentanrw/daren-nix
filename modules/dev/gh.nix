@@ -2,9 +2,9 @@
 
 {
   flake.modules.darwin.gh =
-    { pkgs, ... }:
+    { pkgs, username, ... }:
     {
-      home-manager.users.daren = {
+      home-manager.users.${username} = {
         programs.gh = {
           enable = true;
           package = inputs.nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.gh;

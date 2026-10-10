@@ -2,9 +2,9 @@
 
 {
   flake.modules.darwin.python =
-    { pkgs, ... }:
+    { pkgs, username, ... }:
     {
-      home-manager.users.daren = {
+      home-manager.users.${username} = {
         home.packages = with pkgs; [
           python313
           ruff

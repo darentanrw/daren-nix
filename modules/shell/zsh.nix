@@ -2,11 +2,11 @@
 
 {
   flake.modules.darwin.zsh =
-    { pkgs, ... }:
+    { pkgs, username, ... }:
     {
       programs.zsh.enable = true;
 
-      home-manager.users.daren = {
+      home-manager.users.${username} = {
         home.file.".p10k.zsh".source = ./p10k.zsh;
 
         home.packages = with pkgs; [

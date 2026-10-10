@@ -2,9 +2,14 @@
 
 {
   flake.modules.darwin.node =
-    { lib, pkgs, ... }:
     {
-      home-manager.users.daren =
+      lib,
+      pkgs,
+      username,
+      ...
+    }:
+    {
+      home-manager.users.${username} =
         { config, ... }:
         let
           pnpmHome = "${config.home.homeDirectory}/.local/share/pnpm";

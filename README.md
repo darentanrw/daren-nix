@@ -19,10 +19,13 @@ cd ~/daren-nix
 nix develop -c apply-nix-darwin-configuration daren-work-aarch64-darwin
 ```
 
-| Host                        | Machine                                          |
-| --------------------------- | ------------------------------------------------ |
-| `daren-aarch64-darwin`      | Personal (the default when no host is passed)    |
-| `daren-work-aarch64-darwin` | Work: adds work Homebrew packages and Dock setup |
+| Host                          | Machine                                          |
+| ----------------------------- | ------------------------------------------------ |
+| `daren-aarch64-darwin`        | Personal (the default when no host is passed)    |
+| `daren-work-aarch64-darwin`   | Work: adds work Homebrew packages and Dock setup |
+| `readily-work-aarch64-darwin` | Same work config, for a Mac whose user is `readily` |
+
+Hosts are tied to the macOS account name (`whoami`). To add a work Mac with a different user, add the name to `usernames` in `modules/hosts/daren-work-aarch64-darwin.nix`.
 
 Open a new terminal after the first apply to pick up the managed shell. After that:
 

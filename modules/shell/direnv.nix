@@ -1,12 +1,14 @@
 { ... }:
 
 {
-  flake.modules.darwin.direnv = {
-    home-manager.users.daren = {
-      programs.direnv = {
-        enable = true;
-        nix-direnv.enable = true;
+  flake.modules.darwin.direnv =
+    { username, ... }:
+    {
+      home-manager.users.${username} = {
+        programs.direnv = {
+          enable = true;
+          nix-direnv.enable = true;
+        };
       };
     };
-  };
 }
